@@ -1,21 +1,18 @@
-import { useState } from "react";
-import Login from "./Login";
-import Signup from "./Signup";
+import Home from "./pages/Home";
+import Navbar from "./pages/Navbar";
+import { Routes, Route } from "react-router-dom";
+
 
 
 function App() {
-  const [isLogin, setIsLogin] = useState(true);
 
   return (
-    <div className="container">
-      <h1>{isLogin ? "Login Page" : "Signup Page"}</h1>
-
-      {isLogin ? <Login /> : <Signup />}
-
-      <button onClick={() => setIsLogin(!isLogin)}>
-        {isLogin ? "Signup" : "Login"}
-      </button>
-    </div>
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+      </Routes>
+    </>
   );
 }
 
