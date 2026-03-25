@@ -1,31 +1,35 @@
-import { useState } from "react";
+import React from 'react'
 
-function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+const Login = () => {
 
-  const handleLogin = () => {
-    alert(`Email: ${email} Password: ${password}`);
-  };
+    const handleLogin = (e) => {
+        e.preventDefault();
 
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+
+        alert(`Email: ${email}, Password: ${password}`);
+    };
   return (
-    <div>
-      <input
-        type="email"
-        placeholder="Enter Email"
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <br/>
+    <div className="form-container">
+      <form className="form-card"
+     onSubmit ={handleLogin}>
+     <h2>Login Page</h2>
 
-      <input
-        type="password"
-        placeholder="Enter Password"
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <br />
+    <input type="email" name="email" placeholder="Enter Email" />
+   
 
-      <button onClick={handleLogin}>Login</button>
-    </div>
+    <input type="password" name="password" placeholder="Enter Password" />
+    
+
+    <button type="submit">Login</button>
+
+    <p className='form-text'>
+      Don't have an account? <a href="/signup">Signup</a>
+    </p>
+      </form>
+  </div> 
   );
-}
-export default Login;
+};
+
+export default Login

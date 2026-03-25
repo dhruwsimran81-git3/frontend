@@ -1,40 +1,50 @@
-import { useState } from "react";
 
-function Signup() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+const Signup = () => {
 
-  const handleSignup = () => {
-    alert(`Name: ${name} Email: ${email}`);
-  };
+    const handleSignup = (e) => {
+        e.preventDefault();
+
+        const name = e.target.name.value;
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+
+        alert(`Name: ${name}, Email: ${email}, Password: ${password}`);
+    };
+
 
   return (
-    <div>
-      <input
-        type="text"
-        placeholder="Enter Name"
-        onChange={(e) => setName(e.target.value)}
-      />
-      <br />
 
-      <input
-        type="email"
-        placeholder="Enter Email"
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <br />
+<div className="form-container">
+  <form className="form-card"
+onSubmit={handleSignup}> 
+<h2>Signup Page</h2>
 
-      <input
-        type="password"
-        placeholder="Enter Password"
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <br />
+   <input type="text" name="name"
+placeholder="Full Name" />
+  
 
-      <button onClick={handleSignup}>Signup</button>
-    </div>
+    <input type="email" name="email"
+placeholder="Email" />
+
+
+    <input type="password" name="password" 
+placeholder="Password" />
+
+
+    <input type="password" name="password" 
+placeholder="Confirm Password" />
+
+
+    <button type="Submit">Signup</button>
+
+     <p className='form-text'>
+      Already have an account? <a href="/login">Login</a>
+    </p>
+   </form>
+
+</div>
+        
   );
-}
+};
 
 export default Signup;

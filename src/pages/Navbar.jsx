@@ -1,15 +1,17 @@
-import React from 'react'
+// import './assets/css/style.css';
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
     <nav className="navbar">
-      {/* Logo */}
-      <div className="logo">
-        <a href="/"><img src="/public/favicon.svg" alt="" /></a>
-      </div>
-      
-    </nav>
-  )
-}
+      <h2 className='logo'>My App</h2>
 
-export default Navbar
+      <div className="nav-links">
+        <Link to="/">Home</Link>
+        <Link to="/login">Login</Link>
+        <Link to="/signup">Signup</Link>
+      </div>
+    </nav>
+  );
+};
+export default Navbar;
