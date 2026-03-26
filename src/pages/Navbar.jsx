@@ -10,7 +10,7 @@ const Navbar = () => {
       <h2 className="logo">Simran</h2>
 
       <div className="menu-icon" onClick={() => setOpen(!open)}>
-        {open ? "x" : "☰"}
+        {open ? "x" : "="}
       </div>
 
       <div className={`nav-links ${open ? "active" : ""}`}>
