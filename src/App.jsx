@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import './assets/css/style.css';
+import './assets/css/home.css';
 import { Routes, Route } from "react-router-dom";
 
 
