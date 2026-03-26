@@ -10,14 +10,12 @@ const Navbar = () => {
       <h2 className="logo">Simran</h2>
 
       <div className="menu-icon" onClick={() => setOpen(!open)}>
-        {open ? "x" : "="}
+        {open ? "x" : "☰"}
       </div>
 
       <div className={`nav-links ${open ? "active" : ""}`}>
         <Link to="/">Home</Link>
         <Link to="/login">Login</Link>
-        {/* <a href="/login">Login</a>
-        <a href="/signup">Signup</a> */}
         <Link to="/signup">Signup</Link>
       </div>
     </nav>

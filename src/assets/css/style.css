@@ -39,7 +39,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: calc(100vh-70px);
+    min-height: 80vh;
     padding: 20px;
 }
 
@@ -47,7 +47,7 @@ body {
     background: white;
     padding: 30px;
     border-radius: 10px;
-    width: 300px;
+    width: 350+px;
     box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
 }
 
@@ -98,78 +98,51 @@ body {
     color: white;
     cursor: pointer;
 }
-
-/* @media (max-width: 600px) {
-
-    .menu-icon{
-        display: block;
-        font-size: 28px;
+       
+@media (max-width: 600px) {
+    .menu-icon {
+    display: block;
+    font-size: 28px;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    z-index: 1000;
     }
-
+    
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        position: relative;
+    }
+    
     .nav-links {
         display: none;
         flex-direction: column;
         width: 100%;
-        background: #222;
+        background: #111;
         position: absolute;
         top: 60px;
         left: 0;
-    }  
-    .nav-links.active{
+        padding: 10px 0;
+        border-top: 1px solid #333;
+    }
+    
+    .nav-links.active {
         display: flex;
-    }  
-
-    nav-links a{
-        padding: 10px;
-        border-radius: 1px solid #444;
+    }
+    
+    .nav-links a {
+        padding: 10px 20px;
+        font-size: 15px;
+        color: #fff;
+        border-bottom: 1px solid #333;
+        transition: 0.3s;
+    }
+    
+    .nav-links a:hover {
+        background: #222;
+        padding-left: 25px;
+        color: #00c6ff;
     } 
-    }  */
-
        
-     @media (max-width: 600px) {
-    
-            .menu-icon {
-                display: block;
-                font-size: 28px;
-                position: absolute;
-                right: 20px;
-                top: 15px;
-                z-index: 1000;
-            }
-    
-            .navbar {
-                flex-direction: column;
-                align-items: flex-start;
-                position: relative;
-            }
-    
-            .nav-links {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                background: #111;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                padding: 10px 0;
-                border-top: 1px solid #333;
-            }
-    
-            .nav-links.active {
-                display: flex;
-            }
-    
-            .nav-links a {
-                padding: 10px 20px;
-                font-size: 15px;
-                color: #fff;
-                border-bottom: 1px solid #333;
-                transition: 0.3s;
-            }
-    
-             .nav-links a:hover {
-                background: #222;
-                padding-left: 25px;
-                color: #00c6ff;
-            } 
-        } 
+} 
