@@ -1,4 +1,4 @@
-
+import "../assets/css/form.css";
 const Signup = () => {
 
     const handleSignup = (e) => {
