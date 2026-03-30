@@ -17,18 +17,14 @@ const Navbar = () => {
       <div className={`nav-links ${open ? "active" : ""}`}>
         <div className="center-links">
           <Link to="/">Home</Link>
-          {/* <a href="#home">Home</a> */}
-          <Link to="/about">About</Link>
-          {/* <a href="#about">About</a> */}
+          <Link to="/about"> About</Link>
         </div>
 
         <div className="right-links">
           {location.pathname === "/login" ? (
             <Link to="/signup">Signup</Link>
-            // <a href="#signup">Signup</a>
           ) : (
             <Link to="/login">Login</Link>
-            // <a href="#login">Login</a>
           )}
         </div>
       </div>

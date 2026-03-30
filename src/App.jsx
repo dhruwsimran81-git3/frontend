@@ -10,13 +10,15 @@ function App() {
   return (
     <>
       <Navbar />
-       <Routes>
-        {<Route path="/" element={<Home />} />}
+      <Home />
+      {/* <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/about" element={<About />} />
-      </Routes> 
-      <Footer /> 
+      </Routes> */}
+      <About />
+      <Footer />
     </>
   );
 }
