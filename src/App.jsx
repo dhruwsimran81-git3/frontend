@@ -5,7 +5,6 @@ import Signup from "./components/Signup";
 import About from "./components/About";
 import Footer from "./components/Footer";
 import { Routes, Route } from "react-router-dom";
-import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
