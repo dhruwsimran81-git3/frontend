@@ -13,37 +13,31 @@ const Signup = () => {
 
 
   return (
+    <div className="form-container">
+      <form className="form-card" onSubmit={handleSignup}>
+        <h2>Signup Page</h2>
 
-<div className="form-container">
-  <form className="form-card"
-onSubmit={handleSignup}> 
-<h2>Signup Page</h2>
+        <input type="text" name="name" placeholder="Full Name" />
 
-   <input type="text" name="name"
-placeholder="Full Name" />
-  
+        <input type="email" name="email" placeholder="Email" />
 
-    <input type="email" name="email"
-placeholder="Email" />
+        <input type="password" name="password" placeholder="Password" />
 
+        <input type="password" name="password" placeholder="Confirm Password" />
 
-    <input type="password" name="password" 
-placeholder="Password" />
+        <button type="Submit">Signup</button>
 
-
-    <input type="password" name="password" 
-placeholder="Confirm Password" />
-
-
-    <button type="Submit">Signup</button>
-
-     <p className='form-text'>
-      Already have an account? <a href="/login">Login</a>
-    </p>
-   </form>
-
-</div>
-        
+        <p className="form-text">
+          Already have an account?
+          <span
+            onClick={() => (window.location.href = "/login")}
+            style={{ cursor: "pointer", color: "#667eea" }}
+          >
+            Login
+          </span>
+        </p>
+      </form>
+    </div>
   );
 };
 

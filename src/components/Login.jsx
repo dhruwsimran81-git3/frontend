@@ -24,7 +24,12 @@ const Login = () => {
     <button type="submit">Login</button>
 
     <p className='form-text'>
-      Don't have an account? <a href="/signup">Signup</a>
+      Don't have an account?
+      <span 
+      onClick={() => window.location.href="/signup"}
+        style={{cursor: "pointer", color:"#667eea"}}>
+          Signup
+      </span>
     </p>
       </form>
   </div> 

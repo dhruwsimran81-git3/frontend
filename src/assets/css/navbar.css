@@ -1,9 +1,13 @@
-.navbar {
+ .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #222;
+    background: #222;
     padding: 15px 30px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .logo {
@@ -14,17 +18,47 @@
 
 .nav-links {
     display: flex;
-    gap: 15px;
+    align-items: center;
+    width: 100%;
 }
 
-.nav-links a {
+.center-links {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+    margin: auto;
+    padding-left: 100px;
+}
+
+.center-links a {
     color: #ddd;
     text-decoration: none;
     font-size: 18px;
+   
 }
 
-.nav-links a:hover {
-    color: rgb(14, 156, 158);
+.center-links a:hover {
+    color: #00c6ff;
+    transform: scale(1.1);
+}
+
+.right-links {
+    margin-left: auto;
+    padding-right: 30px;
+}
+
+.right-links a {
+    padding: 8px 18px;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+
+.right-links a:hover {
+    color: #00c6ff;
+    transform: scale(1.1);
 }
 
 .menu-icon {
@@ -32,22 +66,18 @@
     font-size: 25px;
     color: white;
     cursor: pointer;
+    z-index: 1200;
+   
 }
 
-/* Mobile */
-@media (max-width: 600px) {
+@media (max-width:600px) {
+
     .menu-icon {
         display: block;
         position: absolute;
         right: 20px;
         top: 15px;
-        z-index: 1000;
-    }
-
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-        position: relative;
+        z-index: 1100;
     }
 
     .nav-links {
@@ -59,15 +89,26 @@
         top: 60px;
         left: 0;
         padding: 10px 0;
-        border-top: 1px solid #333;
-    }
+    } 
 
     .nav-links.active {
         display: flex;
+    }
+
+    .center-links {
+        flex-direction: column;
+        align-items: center;
+        margin: 0;
+    }
+
+    .right-links {
+        margin: 0;
+        text-align: center;
     }
 
     .nav-links a {
         padding: 10px 20px;
         border-bottom: 1px solid #333;
     }
-}
+} 
+ 

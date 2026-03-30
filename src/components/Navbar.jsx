@@ -1,9 +1,10 @@
 import "../assets/css/navbar.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 
 const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const location = useLocation();
 
   return (
     <nav className="navbar">
@@ -14,10 +15,22 @@ const Navbar = () => {
       </div>
 
       <div className={`nav-links ${open ? "active" : ""}`}>
-        <Link to="/">Home</Link>
-        <Link to="/login">Login</Link>
-        <Link to="/signup">Signup</Link>
-        <Link to="/about">About</Link>
+        <div className="center-links">
+          <Link to="/">Home</Link>
+          {/* <a href="#home">Home</a> */}
+          <Link to="/about">About</Link>
+          {/* <a href="#about">About</a> */}
+        </div>
+
+        <div className="right-links">
+          {location.pathname === "/login" ? (
+            <Link to="/signup">Signup</Link>
+            // <a href="#signup">Signup</a>
+          ) : (
+            <Link to="/login">Login</Link>
+            // <a href="#login">Login</a>
+          )}
+        </div>
       </div>
     </nav>
   );
