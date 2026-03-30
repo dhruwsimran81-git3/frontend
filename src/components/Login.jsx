@@ -1,5 +1,6 @@
 import React from 'react'
 import "../assets/css/form.css";
+import { Link } from "react-router-dom";
 
 const Login = () => {
 
@@ -25,11 +26,7 @@ const Login = () => {
 
     <p className='form-text'>
       Don't have an account?
-      <span 
-      onClick={() => window.location.href="/signup"}
-        style={{cursor: "pointer", color:"#667eea"}}>
-          Signup
-      </span>
+      <Link to="/signup"> Signup</Link>
     </p>
       </form>
   </div> 

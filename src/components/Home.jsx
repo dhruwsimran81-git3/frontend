@@ -3,7 +3,7 @@ import profile from "../assets/profile/profile.jpg";
 
 const Home = () => {
   return (
-    <div className="home-container">
+    <div className="home-container" id="home">
       <div className="home-card">
         <img src={profile} alt="profile" className="profile-img" />
 

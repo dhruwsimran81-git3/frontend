@@ -5,10 +5,13 @@ import { useState } from "react";
 const Navbar = () => {
   const [open, setOpen] = useState(false);
   const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
   return (
     <nav className="navbar">
-      <h2 className="logo">Simran</h2>
+      <Link to="/" className="logo" onClick={() => setOpen(false)}>
+        Simran
+      </Link>
 
       <div className="menu-icon" onClick={() => setOpen(!open)}>
         {open ? "x" : "="}
@@ -16,15 +19,26 @@ const Navbar = () => {
 
       <div className={`nav-links ${open ? "active" : ""}`}>
         <div className="center-links">
-          <Link to="/">Home</Link>
-          <Link to="/about"> About</Link>
+          {isHomePage ? (
+            <>
+              <a href="#home" onClick={() => setOpen(false)}>Home</a>
+              <a href="#about" onClick={() => setOpen(false)}>About</a>
+            </>
+          ) : (
+            <>
+              <Link to="/" onClick={() => setOpen(false)}>Home</Link>
+              <a href="/#about" onClick={() => setOpen(false)}>About</a>
+            </>
+          )}
         </div>
 
         <div className="right-links">
           {location.pathname === "/login" ? (
-            <Link to="/signup">Signup</Link>
+            <Link to="/signup" onClick={() => setOpen(false)}>Sign Up</Link>
+          ) : location.pathname === "/signup" ? (
+            <Link to="/login" onClick={() => setOpen(false)}>Login</Link>
           ) : (
-            <Link to="/login">Login</Link>
+            <Link to="/login" onClick={() => setOpen(false)}>Login</Link>
           )}
         </div>
       </div>
